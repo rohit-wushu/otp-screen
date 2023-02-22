@@ -1,0 +1,149 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Healthians</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://cdn1.healthians.com/img/favicon.png" rel="icon" type="image/x-icon">
+    <!-- bootstrap css file -->
+    <link href="https://www.healthians.com/css/t2/bootstrap.css" rel="stylesheet">
+    <!-- font family file -->
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- custom css  -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- login section start from here -->
+    <div class="login-wrapper">
+        <div class="container">
+            <div class="login-title text-center">
+                <h2>Welcome to Healthians!</h2>
+                <img src="./assets/images/underline.png" alt="underline-divider">
+            </div>
+            <div class="login-outside">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 login-left">
+                            <div class="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="login-right">
+                                <h3>Verify OTP </h3>
+                                <div class="bottom-line"></div>
+                                <div class="login-div-verify">
+                                    <img src="./assets/images/confirmotp.png" alt="mobile-icon">
+                                    <p>Please enter verification code (OTP) sent to</p>
+                                    <h3>+91 9876543210</h3>
+                                    <div class="otp-box">
+                                        <input id="otp-first otp-box-input" type="number" min="0" max="9" step="1"
+                                            aria-label="first digit" />
+
+                                        <input id="otp-second otp-box-input" type="number" min="0" max="9" step="1"
+                                            aria-label="second digit" />
+
+                                        <input id="otp-third otp-box-input" type="number" min="0" max="9" step="1"
+                                            aria-label="third digit" />
+
+                                        <input id="otp-fourth otp-box-input" type="number" min="0" max="9" step="1"
+                                            aria-label="fourth digit" />
+
+                                        <input id="otp-fourth otp-box-input" type="number" min="0" max="9" step="1"
+                                            aria-label="fourth digit" />
+                                            
+                                        <input id="otp-fourth otp-box-input" type="number" min="0" max="9" step="1"
+                                            aria-label="fourth digit" />
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- login section end here -->
+
+
+    <!-- bootstrap js files   -->
+
+    <script>
+        // console.clear();
+        let otp_inputs = document.querySelectorAll("input");
+        let values = Array(4);
+        let clipData;
+        otp_inputs[0].focus();
+
+        otp_inputs.forEach((tag, index) => {
+            tag.addEventListener('keyup', (event) => {
+                if (event.code === "Backspace" && hasNoValue(index)) {
+                    if (index > 0) otp_inputs[index - 1].focus();
+                }
+
+                //else if any input move focus to next or out
+                else if (tag.value !== "") {
+                    (index < otp_inputs.length - 1) ? otp_inputs[index + 1].focus() : tag.blur();
+                }
+
+                //add val to array to track prev vals
+                values[index] = event.target.value;
+            });
+
+            tag.addEventListener('input', () => {
+                //replace digit if already exists
+                if (tag.value > 10) {
+                    tag.value = tag.value % 10;
+                }
+            });
+
+            tag.addEventListener('paste', (event) => {
+                event.preventDefault();
+                clipData = event.clipboardData.getData("text/plain").split('');
+                filldata(index);
+            })
+        })
+
+        function filldata(index) {
+            for (let i = index; i < otp_inputs.length; i++) {
+                otp_inputs[i].value = clipData.shift();
+            }
+        }
+
+        function hasNoValue(index) {
+            if (values[index] || values[index] === 0)
+                return false;
+
+            return true;
+        }
+
+    </script>
+
+
+
+    <script type="text/javascript" src="https://www.healthians.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.healthians.com/js/bootstrap.min.js"></script>
+</body>
+
+</html>
