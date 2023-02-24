@@ -68,21 +68,26 @@
     <!-- bootstrap js files   -->
 
     <script>
-        const otpInputs = document.querySelectorAll('.otp-input-container input');
+       const otpInputs = document.querySelectorAll('.otp-input-container input');
 
-        otpInputs.forEach((input, index) => {
-            input.addEventListener('input', function (event) {
-                const inputLength = input.value.length;
-                const nextInput = otpInputs[index + 1];
-                const prevInput = otpInputs[index - 1];
+otpInputs.forEach((input, index) => {
+  input.addEventListener('input', function(event) {
+    const inputLength = input.value.length;
+    const nextInput = otpInputs[index + 1];
+    const prevInput = otpInputs[index - 1];
 
-                if (inputLength === 1 && nextInput) {
-                    nextInput.focus();
-                } else if (inputLength === 0 && prevInput) {
-                    prevInput.focus();
-                }
-            });
-        });
+    // Don't move to the previous input box if the value is empty and
+    // the event is not a "cut" or "delete" event
+    if (inputLength === 0 && prevInput && event.inputType !== 'deleteContentBackward' && event.inputType !== 'deleteContentForward' && event.inputType !== 'cut') {
+      prevInput.focus();
+    }
+
+    // Move to the next input box if the value is non-empty and there's a next input box
+    else if (inputLength === 1 && nextInput) {
+      nextInput.focus();
+    }
+  });
+});
 
     </script>
 
