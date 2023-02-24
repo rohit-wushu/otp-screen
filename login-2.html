@@ -1,0 +1,104 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Healthians</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://cdn1.healthians.com/img/favicon.png" rel="icon" type="image/x-icon">
+    <!-- bootstrap css file -->
+    <link href="https://www.healthians.com/css/t2/bootstrap.css" rel="stylesheet">
+    <!-- font family file -->
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- custom css  -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+   
+   .otp-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.otp-input-container input {
+  margin: 0 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  width: 40px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+
+    <!-- login section start from here -->
+    <div class="login-wrapper">
+        <h2>Codepen</h2>
+        <div class="container">
+            <div class="otp-input-container">
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+              </div>
+              
+        </div>
+    </div>
+
+    <!-- login section end here -->
+
+
+    <!-- bootstrap js files   -->
+
+    <script>
+   const otpInputs = document.querySelectorAll('.otp-input-container input');
+
+otpInputs.forEach((input, index) => {
+  input.addEventListener('keydown', function(event) {
+    const key = event.key;
+    const nextInput = otpInputs[index + 1];
+    const prevInput = otpInputs[index - 1];
+
+    if (key >= 0 && key <= 9) {
+      input.value = key;
+      if (nextInput) {
+        nextInput.focus();
+      }
+    } else if (key === 'Backspace') {
+      input.value = '';
+      if (prevInput) {
+        prevInput.focus();
+      }
+    }
+  });
+});
+
+    </script>
+
+
+
+    <script type="text/javascript" src="https://www.healthians.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.healthians.com/js/bootstrap.min.js"></script>
+</body>
+
+</html>
