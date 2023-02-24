@@ -60,7 +60,7 @@
 
     <!-- login section start from here -->
     <div class="login-wrapper">
-        <h2>Codepen Mobile / Desktop </h2>
+        <h2>Codepen mobile numeric </h2>
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-4 text-center">
@@ -70,19 +70,19 @@
                                 Verify OTP
                             </div>
 
-                            <form action="" class="mt-5">
+                            <form action="#">
                                 <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)'
-                                    maxlength=1>
+                                    inputmode="numeric" id="otp-box" maxlength=1>
                                 <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)'
-                                    maxlength=1>
+                                    inputmode="numeric" id="otp-box" maxlength=1>
                                 <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)'
-                                    maxlength=1>
+                                    inputmode="numeric" id="otp-box" maxlength=1>
                                 <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)'
-                                    maxlength=1>
-                                    <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(5)'
-                                    maxlength=1>
-                                    <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(6)'
-                                    maxlength=1>
+                                    inputmode="numeric" id="otp-box" maxlength=1>
+                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(5)'
+                                    inputmode="numeric" id="otp-box" maxlength=1>
+                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(6)'
+                                    inputmode="numeric" id="otp-box" maxlength=1>
                             </form>
                             <hr class="mt-4">
                             <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>
@@ -113,13 +113,8 @@
             }
         }
 
-
-
-
-
-
-
-
+        let otpBox = document.getElementById("otp-box");
+        otpBox.setAttribute("inputmode", "numeric");
 
     </script>
 
