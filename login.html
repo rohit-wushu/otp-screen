@@ -53,23 +53,20 @@
                                     <p>Please enter verification code (OTP) sent to</p>
                                     <h3>+91 9876543210</h3>
                                     <div class="otp-box">
-                                        <input id="otp-first otp-box-input" type="number" min="0" max="9" step="1"
-                                            aria-label="first digit" />
-
-                                        <input id="otp-second otp-box-input" type="number" min="0" max="9" step="1"
-                                            aria-label="second digit" />
-
-                                        <input id="otp-third otp-box-input" type="number" min="0" max="9" step="1"
-                                            aria-label="third digit" />
-
-                                        <input id="otp-fourth otp-box-input" type="number" min="0" max="9" step="1"
-                                            aria-label="fourth digit" />
-
-                                        <input id="otp-fourth otp-box-input" type="number" min="0" max="9" step="1"
-                                            aria-label="fourth digit" />
-                                            
-                                        <input id="otp-fourth otp-box-input" type="number" min="0" max="9" step="1"
-                                            aria-label="fourth digit" />
+                                        <form action="#">
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(5)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(6)'
+                                                maxlength=1>
+                                        </form>
                                     </div>
                                     
                                 </div>
@@ -89,57 +86,23 @@
 
     <!-- bootstrap js files   -->
 
+   
     <script>
-        // console.clear();
-        let otp_inputs = document.querySelectorAll("input");
-        let values = Array(4);
-        let clipData;
-        otp_inputs[0].focus();
 
-        otp_inputs.forEach((tag, index) => {
-            tag.addEventListener('keyup', (event) => {
-                if (event.code === "Backspace" && hasNoValue(index)) {
-                    if (index > 0) otp_inputs[index - 1].focus();
-                }
+        let digitValidate = function (otp_input_value) {
+            otp_input_value.value = otp_input_value.value.replace(/[^0-9]/g, '');
+        }
 
-                //else if any input move focus to next or out
-                else if (tag.value !== "") {
-                    (index < otp_inputs.length - 1) ? otp_inputs[index + 1].focus() : tag.blur();
-                }
-
-                //add val to array to track prev vals
-                values[index] = event.target.value;
-            });
-
-            tag.addEventListener('input', () => {
-                //replace digit if already exists
-                if (tag.value > 10) {
-                    tag.value = tag.value % 10;
-                }
-            });
-
-            tag.addEventListener('paste', (event) => {
-                event.preventDefault();
-                clipData = event.clipboardData.getData("text/plain").split('');
-                filldata(index);
-            })
-        })
-
-        function filldata(index) {
-            for (let i = index; i < otp_inputs.length; i++) {
-                otp_inputs[i].value = clipData.shift();
+        let tabChange = function (val) {
+            let otp_input_value = document.querySelectorAll('input');
+            if (otp_input_value[val - 1].value != '') {
+                otp_input_value[val].focus()
+            } else if (otp_input_value[val - 1].value == '') {
+                otp_input_value[val - 2].focus()
             }
         }
 
-        function hasNoValue(index) {
-            if (values[index] || values[index] === 0)
-                return false;
-
-            return true;
-        }
-
     </script>
-
 
 
     <script type="text/javascript" src="https://www.healthians.com/js/jquery.min.js"></script>
