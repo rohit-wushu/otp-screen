@@ -25,19 +25,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        .otp-input-container {
+        .otp-input {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
-        .otp-input-container input {
-            margin: 0 5px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .otp-input input {
+            width: 30px;
+            height: 30px;
             font-size: 20px;
             text-align: center;
-            width: 40px;
+            border: 1px solid #ccc;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        .otp-input input:focus {
+            outline: none;
+            border-color: #0077ff;
         }
     </style>
 
@@ -48,15 +54,15 @@
 
     <!-- login section start from here -->
     <div class="login-wrapper">
-        <h2>Codepen 5</h2>
+        <h2>Codepen 7</h2>
         <div class="container">
-            <div class="otp-input-container">
-                <input type="text" maxlength="1" />
-                <input type="text" maxlength="1" />
-                <input type="text" maxlength="1" />
-                <input type="text" maxlength="1" />
-                <input type="text" maxlength="1" />
-                <input type="text" maxlength="1" />
+            <div class="otp-input">
+                <input type="text" maxlength="1" id="digit1">
+                <input type="text" maxlength="1" id="digit2">
+                <input type="text" maxlength="1" id="digit3">
+                <input type="text" maxlength="1" id="digit4">
+                <input type="text" maxlength="1" id="digit5">
+                <input type="text" maxlength="1" id="digit6">
             </div>
 
         </div>
@@ -68,32 +74,78 @@
     <!-- bootstrap js files   -->
 
     <script>
-        const otpInputs = document.querySelectorAll('.otp-input-container input');
+const inputs = document.querySelectorAll('.otp-input input');
 
-        otpInputs.forEach((input, index) => {
-            input.addEventListener('keydown', function (event) {
-                const inputLength = input.value.length;
-                const nextInput = otpInputs[index + 1];
-                const prevInput = otpInputs[index - 1];
+inputs[0].focus();
 
-                // Check if the pressed key is a numeric key (0-9) or a backspace key
-                if (!(event.key >= 0 && event.key <= 9) && event.key !== 'Backspace') {
-                    event.preventDefault();
-                    return;
-                }
+let lastBackspaceTime = 0;
 
-                // Move to the previous input box if the value is empty and the event is a backspace key
-                if (inputLength === 0 && prevInput && event.key === 'Backspace') {
-                    prevInput.focus();
-                }
+function handleInput(e) {
+  const input = e.target;
+  const nextInput = input.nextElementSibling;
+  const prevInput = input.previousElementSibling;
 
-                // Move to the next input box if the value is non-empty and there's a next input box
-                else if (inputLength === 1 && nextInput) {
-                    nextInput.focus();
-                }
-            });
-        });
+  if (input.value && nextInput) {
+    nextInput.focus();
+  }
 
+  if (!input.value && prevInput) {
+    prevInput.focus();
+  }
+}
+
+function handlePaste(e) {
+  const paste = e.clipboardData.getData('text');
+  const digits = paste.split('');
+
+  inputs.forEach((input, index) => {
+    input.value = digits[index] || '';
+  });
+
+  inputs[0].focus();
+}
+
+function handleKeyDown(e) {
+  const input = e.target;
+  const nextInput = input.nextElementSibling;
+  const prevInput = input.previousElementSibling;
+
+  if (e.code === 'Backspace') {
+    if (input.value) {
+      input.value = '';
+    } else {
+      e.preventDefault();
+      const currentTime = new Date().getTime();
+      if (currentTime - lastBackspaceTime < 500 && prevInput) {
+        prevInput.focus();
+      } else if (!input.value && prevInput) {
+        prevInput.focus();
+      }
+      lastBackspaceTime = currentTime;
+    }
+  } else if (e.code === 'ArrowLeft') {
+    if (input.selectionStart === 0) {
+      const prevValue = prevInput?.value;
+      if (prevValue) {
+        prevInput.focus();
+        prevInput.setSelectionRange(prevValue.length, prevValue.length);
+      }
+    }
+  } else if (e.code === 'ArrowRight') {
+    if (input.selectionStart === input.value.length && nextInput) {
+      nextInput.focus();
+    }
+  }
+}
+
+
+
+inputs.forEach(input => {
+  input.addEventListener('input', handleInput);
+  input.addEventListener('paste', handlePaste);
+  input.addEventListener('keydown', handleKeyDown);
+});
+ 
     </script>
 
 
