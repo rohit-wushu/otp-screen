@@ -48,7 +48,7 @@
 
     <!-- login section start from here -->
     <div class="login-wrapper">
-        <h2>Codepen 3</h2>
+        <h2>Codepen 5</h2>
         <div class="container">
             <div class="otp-input-container">
                 <input type="text" maxlength="1" />
@@ -68,26 +68,31 @@
     <!-- bootstrap js files   -->
 
     <script>
-       const otpInputs = document.querySelectorAll('.otp-input-container input');
+        const otpInputs = document.querySelectorAll('.otp-input-container input');
 
-otpInputs.forEach((input, index) => {
-  input.addEventListener('input', function(event) {
-    const inputLength = input.value.length;
-    const nextInput = otpInputs[index + 1];
-    const prevInput = otpInputs[index - 1];
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('keydown', function (event) {
+                const inputLength = input.value.length;
+                const nextInput = otpInputs[index + 1];
+                const prevInput = otpInputs[index - 1];
 
-    // Don't move to the previous input box if the value is empty and
-    // the event is not a "cut" or "delete" event
-    if (inputLength === 0 && prevInput && event.inputType !== 'deleteContentBackward' && event.inputType !== 'deleteContentForward' && event.inputType !== 'cut') {
-      prevInput.focus();
-    }
+                // Check if the pressed key is a numeric key (0-9) or a backspace key
+                if (!(event.key >= 0 && event.key <= 9) && event.key !== 'Backspace') {
+                    event.preventDefault();
+                    return;
+                }
 
-    // Move to the next input box if the value is non-empty and there's a next input box
-    else if (inputLength === 1 && nextInput) {
-      nextInput.focus();
-    }
-  });
-});
+                // Move to the previous input box if the value is empty and the event is a backspace key
+                if (inputLength === 0 && prevInput && event.key === 'Backspace') {
+                    prevInput.focus();
+                }
+
+                // Move to the next input box if the value is non-empty and there's a next input box
+                else if (inputLength === 1 && nextInput) {
+                    nextInput.focus();
+                }
+            });
+        });
 
     </script>
 
