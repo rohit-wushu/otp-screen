@@ -24,35 +24,6 @@
     <!-- font icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        body {
-            background: #eee;
-        }
-
-        .bgWhite {
-            background: white;
-            box-shadow: 0px 3px 6px 0px #cacaca;
-        }
-
-        .title {
-            font-weight: 600;
-            margin-top: 20px;
-            font-size: 24px
-        }
-
-        .customBtn {
-            border-radius: 0px;
-            padding: 10px;
-        }
-
-        form input {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -60,37 +31,54 @@
 
     <!-- login section start from here -->
     <div class="login-wrapper">
-        <h2>Codepen mobile numeric </h2>
         <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-md-4 text-center">
+            <div class="login-title text-center">
+                <h2>Welcome to Healthians!</h2>
+                <img src="./assets/images/underline.png" alt="underline-divider">
+            </div>
+            <div class="login-outside">
+                <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 mt-5 bgWhite">
-                            <div class="title">
-                                Verify OTP
-                            </div>
+                        <div class="col-md-6 login-left">
+                            <div class="">
 
-                            <form action="#">
-                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)'
-                                    inputmode="numeric" id="otp-box" maxlength=1>
-                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)'
-                                    inputmode="numeric" id="otp-box" maxlength=1>
-                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)'
-                                    inputmode="numeric" id="otp-box" maxlength=1>
-                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)'
-                                    inputmode="numeric" id="otp-box" maxlength=1>
-                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(5)'
-                                    inputmode="numeric" id="otp-box" maxlength=1>
-                                <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(6)'
-                                    inputmode="numeric" id="otp-box" maxlength=1>
-                            </form>
-                            <hr class="mt-4">
-                            <button class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="login-right">
+                                <h3>Verify OTP </h3>
+                                <div class="bottom-line"></div>
+                                <div class="login-div-verify">
+                                    <img src="./assets/images/confirmotp.png" alt="mobile-icon">
+                                    <p>Please enter verification code (OTP) sent to</p>
+                                    <h3>+91 987654321-</h3>
+                                    <div class="otp-box">
+                                        <form action="#">
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(5)'
+                                                maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(6)'
+                                                maxlength=1>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
 
     <!-- login section end here -->
@@ -98,6 +86,7 @@
 
     <!-- bootstrap js files   -->
 
+   
     <script>
 
         let digitValidate = function (otp_input_value) {
@@ -113,11 +102,7 @@
             }
         }
 
-        let otpBox = document.getElementById("otp-box");
-        otpBox.setAttribute("inputmode", "numeric");
-
     </script>
-
 
 
     <script type="text/javascript" src="https://www.healthians.com/js/jquery.min.js"></script>
