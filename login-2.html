@@ -24,25 +24,22 @@
     <!-- font icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-   
-   .otp-input-container {
-  display: flex;
-  justify-content: center;
-}
+    <style>
+        .otp-input-container {
+            display: flex;
+            justify-content: center;
+        }
 
-.otp-input-container input {
-  margin: 0 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 20px;
-  text-align: center;
-  width: 40px;
-}
-
-
-</style>
+        .otp-input-container input {
+            margin: 0 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            width: 40px;
+        }
+    </style>
 
 </head>
 
@@ -60,8 +57,8 @@
                 <input type="text" maxlength="1" />
                 <input type="text" maxlength="1" />
                 <input type="text" maxlength="1" />
-              </div>
-              
+            </div>
+
         </div>
     </div>
 
@@ -71,27 +68,21 @@
     <!-- bootstrap js files   -->
 
     <script>
-   const otpInputs = document.querySelectorAll('.otp-input-container input');
+        const otpInputs = document.querySelectorAll('.otp-input-container input');
 
-otpInputs.forEach((input, index) => {
-  input.addEventListener('keydown', function(event) {
-    const key = event.key;
-    const nextInput = otpInputs[index + 1];
-    const prevInput = otpInputs[index - 1];
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', function (event) {
+                const inputLength = input.value.length;
+                const nextInput = otpInputs[index + 1];
+                const prevInput = otpInputs[index - 1];
 
-    if (key >= 0 && key <= 9) {
-      input.value = key;
-      if (nextInput) {
-        nextInput.focus();
-      }
-    } else if (key === 'Backspace') {
-      input.value = '';
-      if (prevInput) {
-        prevInput.focus();
-      }
-    }
-  });
-});
+                if (inputLength === 1 && nextInput) {
+                    nextInput.focus();
+                } else if (inputLength === 0 && prevInput) {
+                    prevInput.focus();
+                }
+            });
+        });
 
     </script>
 
