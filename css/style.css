@@ -726,10 +726,10 @@ body {
 
 .login-wrapper .login-left {
     background-image: url(../assets/images/left-div-background.jpg);
-    height: 515px;
+    height: 600px;
     padding: 80px 20px 0 0;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 .login-right{
@@ -761,7 +761,27 @@ body {
     display: block;
     color: #000;
 }
-
+.login-right .whatsapp_opt{
+    color: #888;
+    padding: 0px;
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-top: 25px;
+    font-size: 17px;
+}
+.login-right .whatsapp_opt img{
+    width: 35px;
+    padding-right: 10px;
+    margin-left: -4px;
+}
+.right-terms p{
+    padding-top: 40px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    color: #7b7a7a;
+    font-size: 15px;
+}
 .login-outside {
     padding-top: 0;
     position: relative;
@@ -800,16 +820,10 @@ body {
     background-color: #079ca3;
 }
 
-
-/* CODEPEN */
- 
+/* OTP */ 
   .otp-box {
-    margin: auto; 
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    width:100%;
-    margin: 30px 0;
+    margin: 10px 0;
+    display: inline-block!important;
   }
   
   .otp-box  input {
@@ -828,7 +842,64 @@ body {
     -webkit-appearance: none; 
     margin: 0; 
   }
-/* CODEPEN */
+/* OTP */
+
+.whtsapp_toggle {
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .whtsapp_toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 50px;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+  }
+  .whtsapp_toggle-switch:before, .whtsapp_toggle-switch:after {
+    content: "";
+  }
+  .whtsapp_toggle-switch:before {
+    display: block;
+    background: #4CAF50;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    transition: left 0.25s;
+    border: 1px solid #00000005;
+  }
+  .toggle:hover .whtsapp_toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  }
+  .toggle-checkbox:checked + .whtsapp_toggle-switch {
+    background: #A5D6A7;
+  }
+  .toggle-checkbox:checked + .whtsapp_toggle-switch:before {
+    left: 30px;
+  }
+  
+  .whatsapp_opt .toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .whatsapp_opt .toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+  }
+
+  .login_url{
+    color: #f16948;
+  }
+
 
 /*login page css end here */
 
@@ -836,9 +907,12 @@ body {
 
 /* media queries start from here */
 @media only screen and (max-width: 600px) {
+    .login-right{
+        padding: 15px 0;
+    }
     .otp-box input {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         margin: 0 1px 10px;
      }
     .question-wrapper .panel-group {
