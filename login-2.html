@@ -54,7 +54,7 @@
 
     <!-- login section start from here -->
     <div class="login-wrapper">
-        <h2>Codepen 7</h2>
+        <h2>Codepen mob </h2>
         <div class="container">
             <div class="otp-input">
                 <input type="text" maxlength="1" id="digit1">
@@ -74,11 +74,10 @@
     <!-- bootstrap js files   -->
 
     <script>
-const inputs = document.querySelectorAll('.otp-input input');
+   const inputs = document.querySelectorAll('.otp-input input');
+const lastBackspaceTime = 0;
 
 inputs[0].focus();
-
-let lastBackspaceTime = 0;
 
 function handleInput(e) {
   const input = e.target;
@@ -111,18 +110,16 @@ function handleKeyDown(e) {
   const prevInput = input.previousElementSibling;
 
   if (e.code === 'Backspace') {
-    if (input.value) {
-      input.value = '';
+    e.preventDefault();
+    const currentTime = new Date().getTime();
+    if (currentTime - lastBackspaceTime < 500 && prevInput) {
+      prevInput.focus();
+    } else if (!input.value && prevInput) {
+      prevInput.focus();
     } else {
-      e.preventDefault();
-      const currentTime = new Date().getTime();
-      if (currentTime - lastBackspaceTime < 500 && prevInput) {
-        prevInput.focus();
-      } else if (!input.value && prevInput) {
-        prevInput.focus();
-      }
-      lastBackspaceTime = currentTime;
+      input.value = '';
     }
+    lastBackspaceTime = currentTime;
   } else if (e.code === 'ArrowLeft') {
     if (input.selectionStart === 0) {
       const prevValue = prevInput?.value;
@@ -138,14 +135,41 @@ function handleKeyDown(e) {
   }
 }
 
+function handleClick(e) {
+  const input = e.target.previousElementSibling;
+  const prevInput = input.previousElementSibling;
 
+  if (input.value) {
+    input.value = '';
+  } else {
+    const currentTime = new Date().getTime();
+    if (currentTime - lastBackspaceTime < 500 && prevInput) {
+      prevInput.focus();
+    } else if (!input.value && prevInput) {
+      prevInput.focus();
+    } else {
+      input.focus();
+    }
+    lastBackspaceTime = currentTime;
+  }
+}
 
 inputs.forEach(input => {
   input.addEventListener('input', handleInput);
   input.addEventListener('paste', handlePaste);
   input.addEventListener('keydown', handleKeyDown);
 });
- 
+
+// For mobile devices
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  const deleteButtons = document.querySelectorAll('.otp-input .delete-button');
+
+  deleteButtons.forEach(deleteButton => {
+    deleteButton.addEventListener('click', handleClick);
+  });
+}
+
+
     </script>
 
 
