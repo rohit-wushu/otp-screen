@@ -732,6 +732,29 @@ body {
     background-size: 100% 100%;
 }
 
+.login-right{
+    min-height: 470px;
+    background-color: #fff;
+    padding: 16px 35px 15px 45px;
+}
+.login-right .otp_submit_btn{
+    padding: 10px;
+    margin-top: 19px;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    background-color: #f16948;
+    border-color: #f16948;
+    transition: .3s ease-in-out;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+}
+.login-right .otp_submit_btn img{
+    float: right;
+    width: 25px;
+}
 .login-right h3 {
     font-family: 'Lato', sans-serif;
     margin-top: 30px;
