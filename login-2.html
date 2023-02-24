@@ -100,17 +100,16 @@
 
     <script>
 
-        let digitValidate = function (ele) {
-            console.log(ele.value);
-            ele.value = ele.value.replace(/[^0-9]/g, '');
+        let digitValidate = function (otp_input_value) {
+            otp_input_value.value = otp_input_value.value.replace(/[^0-9]/g, '');
         }
 
         let tabChange = function (val) {
-            let ele = document.querySelectorAll('input');
-            if (ele[val - 1].value != '') {
-                ele[val].focus()
-            } else if (ele[val - 1].value == '') {
-                ele[val - 2].focus()
+            let otp_input_value = document.querySelectorAll('input');
+            if (otp_input_value[val - 1].value != '') {
+                otp_input_value[val].focus()
+            } else if (otp_input_value[val - 1].value == '') {
+                otp_input_value[val - 2].focus()
             }
         }
 
