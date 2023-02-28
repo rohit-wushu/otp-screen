@@ -450,7 +450,7 @@ body {
 .question-wrapper .panel-group {
     margin-bottom: 20px;
     width: 100%;
-    column-count: 2;
+    column-count: 1;
 }
 
 .question-wrapper .panel-group .panel+.panel {
@@ -732,12 +732,13 @@ body {
     background-size: cover;
 }
 
-.login-right{
+.login-right {
     min-height: 470px;
     background-color: #fff;
     padding: 16px 35px 15px 45px;
 }
-.login-right .otp_submit_btn{
+
+.login-right .otp_submit_btn {
     padding: 10px;
     margin-top: 19px;
     margin-left: 0;
@@ -751,17 +752,20 @@ body {
     font-size: 22px;
     text-decoration: none;
 }
-.login-right .otp_submit_btn img{
+
+.login-right .otp_submit_btn img {
     float: right;
     width: 25px;
 }
+
 .login-right h3 {
     font-family: 'Lato', sans-serif;
     margin-top: 30px;
     display: block;
     color: #000;
 }
-.login-right .whatsapp_opt{
+
+.login-right .whatsapp_opt {
     color: #888;
     padding: 0px;
     display: block;
@@ -770,18 +774,21 @@ body {
     margin-top: 25px;
     font-size: 17px;
 }
-.login-right .whatsapp_opt img{
+
+.login-right .whatsapp_opt img {
     width: 35px;
     padding-right: 10px;
     margin-left: -4px;
 }
-.right-terms p{
+
+.right-terms p {
     padding-top: 40px;
     width: 100%;
     font-family: 'Lato', sans-serif;
     color: #7b7a7a;
     font-size: 15px;
 }
+
 .login-outside {
     padding-top: 0;
     position: relative;
@@ -791,11 +798,13 @@ body {
     margin-bottom: 30px;
     box-shadow: 0 0 9px #d8d8d8;
 }
-.login-right .login-div-verify{
+
+.login-right .login-div-verify {
     padding: 10px 0 9px 0;
     text-align: center;
 }
-.login-right .login-div-verify p{
+
+.login-right .login-div-verify p {
     font-family: 'Lato', sans-serif;
     padding-top: 10px;
     padding-bottom: 0;
@@ -804,7 +813,8 @@ body {
     float: none;
     color: #565656;
 }
-.login-right .login-div-verify h3{
+
+.login-right .login-div-verify h3 {
     font-family: 'Lato', sans-serif;
     color: #000;
     font-size: 25px;
@@ -812,7 +822,7 @@ body {
     margin: 8px 0 8px 0;
 }
 
-.login-right .bottom-line{
+.login-right .bottom-line {
     height: 3px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -820,13 +830,13 @@ body {
     background-color: #079ca3;
 }
 
-/* OTP */ 
-  .otp-box {
+/* OTP */
+.otp-box {
     margin: 10px 0;
-    display: inline-block!important;
-  }
-  
-  .otp-box  input {
+    display: inline-block !important;
+}
+
+.otp-box input {
     margin-right: 8px;
     width: 50px;
     height: 50px;
@@ -835,70 +845,642 @@ body {
     border-radius: 3px;
     font-size: 25px;
     font-weight: 900;
-  }
-  
-  .otp-box  input[type=number]::-webkit-inner-spin-button, 
-  .otp-box  input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-  }
+}
+
+.otp-box input[type=number]::-webkit-inner-spin-button,
+.otp-box input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* OTP */
 
-/* .whtsapp_toggle {
-    cursor: pointer;
-    display: inline-block;
-  }
-  
-  .whtsapp_toggle-switch {
-    display: inline-block;
-    background: #ccc;
-    border-radius: 16px;
-    width: 50px;
-    height: 20px;
-    position: relative;
-    vertical-align: middle;
-  }
-  .whtsapp_toggle-switch:before, .whtsapp_toggle-switch:after {
-    content: "";
-  }
-  .whtsapp_toggle-switch:before {
-    display: block;
-    background: #4CAF50;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 0px;
-    left: 4px;
-    transition: left 0.25s;
-    border: 1px solid #00000005;
-  }
-  .toggle:hover .whtsapp_toggle-switch:before {
-    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
-  }
-  .toggle-checkbox:checked + .whtsapp_toggle-switch {
-    background: #A5D6A7;
-  }
-  .toggle-checkbox:checked + .whtsapp_toggle-switch:before {
-    left: 30px;
-  }
-  
-  .whatsapp_opt .toggle-checkbox {
-    position: absolute;
-    visibility: hidden;
-  }
-  
-  .whatsapp_opt .toggle-label {
-    margin-left: 5px;
-    position: relative;
-    top: 2px;
-  }
 
-  .login_url{
-    color: #f16948;
-  } */
+/* Healthy Doctor packages css start from here */
+.packages-header-wrapper {
+    background-color: #00A0A8;
+    padding: 30px 0;
+}
+
+.package-content p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    background: #FCBE57;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: #232322;
+    width: 196px;
+    text-align: center;
+}
+
+.package-offer h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin: 10px 0 0;
+}
+
+.book-package {
+    width: 137px;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 24px 11px 16px;
+    border-radius: 40px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.14);
+    margin-top: 15px;
+}
+
+.book-package a {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #454545;
+}
+
+.packages-header-wrapper .offer-special {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.offer-special .item {
+    display: inline-block;
+    padding: 0 10px 0 0;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.offer-inner-img img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.offer-special img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.doctors-wrapper {
+    padding: 27px 0;
+}
+
+.doc-breadcrumbs {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+    color: #767676;
+}
+
+.doc-breadcrumbs span {
+    color: #00A0A8;
+}
+
+.sortorder {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sortorder li {
+    display: inline-block;
+    width: 49%;
+}
+
+.sort-table {
+    float: right;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 2px 3px rgba(126, 126, 126, 0.1);
+    border-radius: 4px;
+    height: 20px;
+    width: 40%;
+}
+
+.sort-table .form-control {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sort-table .form-control:focus {
+    box-shadow: none;
+}
+
+
+.sort-table .dropdown-menu li {
+    width: 100%;
+}
+
+.sortorder h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 47px;
+    color: #333846;
+}
+
+.doctor-main-card {
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 20px 10px;
+    margin: 0 0 20px;
+}
+
+.rating-div {
+    background: #ffffff;
+    width: 113px;
+    margin: -22px auto;
+    border-radius: 4px;
+    border: 0.5px solid #D6D6D6;
+    display: inline-block;
+}
+
+.rating-div .star-checked {
+    color: #FCBE57;
+}
+
+.rating-div p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+    color: #6D6D6D;
+}
+
+.head-doctor ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.head-doctor ul li {
+    display: inline-block;
+    /* margin: 8px 0px; */
+    /* width: 130px; */
+    /* text-align: center; */
+    margin-right: 12px;
+    vertical-align: top;
+}
+
+.head-doctor ul li:first-child {
+    width: 30%;
+}
+
+.doctor-desc h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #0CA3A8;
+}
+
+.doctor-desc p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 25px;
+    color: #04575B;
+    margin-bottom: 5px;
+}
+
+.doctor-desc .timer {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    color: #6B6B6B;
+}
+
+.doctor-desc .timer span {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: #00A0A8;
+}
+
+.doctor-fee {
+    text-align: center;
+}
+
+.appoint-border {
+    /* background: #F1F8FA; */
+    border: 1px solid #E7EEEF;
+    border-radius: 3px;
+    padding: 12px 20px 12px 28px;
+    background-image: url(../assets/images/appointment-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position-x: right;
+}
+
+.appoint-border .appoint-btn {
+    background: #F16948;
+    border-radius: 24px;
+    text-align: center;
+    width: 120px;
+    margin: 20px 0 30px;
+    padding: 10px 0;
+}
+
+.appoint-border .appoint-btn a {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.doctor-consult-div {
+    border-left: 1px solid #E8E8E8;
+}
+
+.doctor-fee p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: #6B6B6B;
+    padding-left: 10px;
+    margin: 0 0 5px;
+}
+
+.doctor-fee .sale-price {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 18px;
+    color: #1B1B1B;
+}
+
+.doctor-fee .sale-price span {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: line-through;
+    color: #F02020;
+}
+
+.doctor-fee .view-profile {
+    background: #F7F7F7;
+    border-radius: 22px;
+    padding: 2px 35px 2px 27px;
+    margin: 10px 0;
+}
+
+.doctor-fee .view-profile a {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 32px;
+    color: #535353;
+}
+
+.doctor-fee .book-appoint {
+    background: #F16948;
+    border-radius: 22px;
+    padding: 2px 35px 2px 27px;
+    margin: 10px 0;
+}
+
+.doctor-fee .book-appoint a {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 32px;
+    color: #fff;
+}
+
+.book-open-popup {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    color: #233162;
+    position: relative;
+}
+
+.book-open-popup img {
+    margin-right: 5px;
+}
+
+.book-open-popup span {
+    text-decoration: underline;
+}
+
+
+.book-appointment-wrapper h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+.book-appointment-wrapper p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    color: #00A0A8;
+}
+
+.book-appointment-wrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.book-appointment-wrapper ul li {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #000000;
+    line-height: 24px;
+}
+
+.book-appointment-wrapper ul li img {
+    margin-right: 5px;
+    width: 9px;
+    height: auto;
+}
+
+.form-col {
+    background-color: #fff;
+    border: 1px solid #E8EAEA;
+    box-shadow: 0px -12px 26px rgb(0 0 0 / 5%);
+    border-radius: 3px;
+    margin: 30px 0 0;
+    padding: 20px;
+}
+
+.form-col .inner-form {
+    text-align: center;
+}
+
+.inner-form h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.inner-form p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.04em;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.inner-form .form-control {
+    margin-bottom: 2rem;
+    height: 45px;
+    border: 0.6px solid #E3E3E3;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+
+.inner-form .appointment-btn {
+    width: 100%;
+    background: #6F6F6F;
+    border-radius: 37px;
+    border: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 45px;
+}
+
+.recommended-packages {
+    background-color: #536474;
+    padding: 30px 20px 65px 20px;
+    border-radius: 3px;
+}
+
+.slider-book {
+    background: #F7F7F7;
+    border-radius: 26px;
+    padding: 1px 10px;
+}
+
+.slider-book a {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 24px;
+    text-align: center;
+    color: #5A5252;
+}
+
+
+.recommended-packages h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.recommended-packages p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16 px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.package-slider-item {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #E8EAEA;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.package-slider-item h3 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3E3E3E;
+}
+
+.package-slider-item .text-light-discount {
+    color: #fff !important;
+}
+
+.package-slider-item .sale_price {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: #1B1B1B;
+}
+
+.package-slider-item .sale_price span {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    text-decoration: line-through;
+    color: #F02020;
+    margin-right: 10px;
+}
+
+.package-slider-item p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 20px;
+    color: #3E3E3E;
+}
+
+.package-slider-item ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.package-slider-item ul li:first-child {
+    width: 65%;
+}
+
+.discount-div {
+    background: #00A912;
+    padding: 0px 10px;
+    border-radius: 4px;
+}
+
+.discount-slider {
+    border-radius: 2px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 15%;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+
+}
+
+.package-slider-item ul li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.owl-prev {
+    top: 0;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    /* margin-top: -20px; */
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 30%), 0 0 4px rgb(0 0 0 / 20%);
+}
+
+.owl-next {
+    top: 0;
+    width: 40px;
+    height: 40px;
+    /* margin-top: -20px; */
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 30%), 0 0 4px rgb(0 0 0 / 20%);
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Healthy Doctor packages css End  here */
+
 
 
 /*login page css end here */
@@ -907,14 +1489,46 @@ body {
 
 /* media queries start from here */
 @media only screen and (max-width: 600px) {
-    .login-right{
+
+    /* package page css start here */
+    .packages-header-wrapper {
+        text-align: center;
+    }
+
+    .sortorder li {
+        width: 100%;
+    }
+
+    .sortorder h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .sort-table {
+        width: 60%;
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    .doctor-main-card{
+        text-align: center;
+    }
+    .rating-div {
+      width: 132px;
+      margin-bottom: 5px;
+    }
+    /* package page css end here */
+
+    .login-right {
         padding: 15px 0;
     }
+
     .otp-box input {
         width: 38px;
         height: 38px;
         margin: 0 1px 10px;
-     }
+    }
+
     .question-wrapper .panel-group {
         column-count: 1;
     }

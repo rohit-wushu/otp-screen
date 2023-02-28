@@ -1,0 +1,138 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Healthians</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://cdn1.healthians.com/img/favicon.png" rel="icon" type="image/x-icon">
+    <!-- bootstrap css file -->
+    <link href="https://www.healthians.com/css/t2/bootstrap.css" rel="stylesheet">
+    <!-- font family file -->
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- custom css  -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- login section start from here -->
+    <div class="login-wrapper">
+        <div class="container">
+            <div class="login-title text-center">
+                <h2>Welcome to Healthians!</h2>
+                <img src="./assets/images/underline.png" alt="underline-divider">
+            </div>
+            <div class="login-outside">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 login-left">
+                            <div class="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="login-right">
+                                <h3>Verify OTP </h3>
+                                <div class="bottom-line"></div>
+                                <div class="login-div-verify">
+                                    <img src="./assets/images/confirmotp.png" alt="mobile-icon">
+                                    <p>Please enter verification code (OTP) sent to</p>
+                                    <h3>+91 987654321</h3>
+                                    <div class="otp-box">
+                                        <form action="#">
+                                            <input class="otp" type="text" oninput='digitValidate(this)'
+                                                onkeyup='tabChange(1)' inputmode="numeric" id="otp-box" maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)'
+                                                onkeyup='tabChange(2)' inputmode="numeric" id="otp-box" maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)'
+                                                onkeyup='tabChange(3)' inputmode="numeric" id="otp-box" maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)'
+                                                onkeyup='tabChange(4)' inputmode="numeric" id="otp-box" maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)'
+                                                onkeyup='tabChange(5)' inputmode="numeric" id="otp-box" maxlength=1>
+                                            <input class="otp" type="text" oninput='digitValidate(this)'
+                                                onkeyup='tabChange(6)' inputmode="numeric" id="otp-box" maxlength=1>
+                                        </form>
+                                    </div>
+                                    <a href="javascript:void(0);" class="otp_submit_btn"> Login <img
+                                            src="./assets/images/arrow-left-icon.png"> </a>
+                                </div>
+                                <!-- <div class="whatsapp_opt">
+                                    <div class="col-md-10 col-xs-9">
+                                        <img src="./assets/images/whtsapp-img.png">Get alerts on WhatsApp
+                                    </div>
+                                    <div class="col-md-2 col-xs-3">
+                                        <div class="wrapepr_toggle_whatsapp">
+
+                                            <label class="whtsapp_toggle">
+                                                <input class="toggle-checkbox" type="checkbox" checked>
+                                                <div class="whtsapp_toggle-switch"></div>
+                                                </label>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div> -->
+                                <!-- <div class="right-terms text-center">
+                                    <p>By proceeding, you agree with our <span class="textdanger"><a
+                                                href="https://www.healthians.com/terms-condition" target="_blank"
+                                                class="login_url">Terms and Conditions</a></span> &amp; <span
+                                            class="textdanger"><a href="https://www.healthians.com/privacy-policy"
+                                                target="_blank" class="login_url">Privacy Policy</a></span></p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- login section end here -->
+
+
+    <!-- bootstrap js files   -->
+
+
+    <script>
+
+        let digitValidate = function (otp_input_value) {
+            otp_input_value.value = otp_input_value.value.replace(/[^0-9]/g, '');
+        }
+
+        let tabChange = function (val) {
+            let otp_input_value = document.querySelectorAll('input');
+            if (otp_input_value[val - 1].value != '') {
+                otp_input_value[val].focus()
+            } else if (otp_input_value[val - 1].value == '') {
+                otp_input_value[val - 2].focus()
+            }
+        }
+
+        // let otpBox = document.getElementById("otp-box");
+        tabChange.setAttribute("inputmode", "numeric");
+
+    </script>
+
+
+    <script type="text/javascript" src="https://www.healthians.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.healthians.com/js/bootstrap.min.js"></script>
+</body>
+
+</html>
